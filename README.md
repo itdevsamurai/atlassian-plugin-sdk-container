@@ -1,7 +1,16 @@
 # atlassian-plugin-sdk-container
-Container image for Atlassian Plugin SDK
 
+[![Publish Docker Image](https://github.com/itdevsamurai/atlassian-plugin-sdk-container/actions/workflows/publish-docker-image.yml/badge.svg?branch=main)](https://github.com/itdevsamurai/atlassian-plugin-sdk-container/pkgs/container/atlassian-plugin-sdk-container)
+
+Container image for Atlassian Plugin SDK
 ## Description
+
+### Quick start
+
+```shell
+# Atlassian Plugin SDK with Node 16 & Yarn installed
+docker pull ghcr.io/itdevsamurai/atlassian-plugin-sdk-container:node16
+```
 
 ### What's included
 
