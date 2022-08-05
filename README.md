@@ -23,19 +23,6 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
 * `node16`: minimal image with Node 16, Yarn installed.
 * `node14`: minimal image with Node 14, Yarn installed.
 
-
-## Development
-
-```shell
-docker run --platform=linux/amd64 \
-    -v /Users/trung/work/confluence-team-decision-server:/app/ \
-    --rm -it ghcr.io/itdevsamurai/atlassian-plugin-sdk-container bash
-```
-
-```shell
-docker buildx build --platform=linux/amd64 \
-    --rm -t ghcr.io/itdevsamurai/atlassian-plugin-sdk-container . --load
-```
 ## Licensing
 
 * Dockerfile and images is provided under MIT License.
