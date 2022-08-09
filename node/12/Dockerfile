@@ -1,4 +1,4 @@
-FROM eclipse-temurin:8-jdk
+FROM eclipse-temurin:8-jdk-focal
 
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
