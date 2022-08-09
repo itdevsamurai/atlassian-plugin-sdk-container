@@ -12,16 +12,6 @@ Container image for Atlassian Plugin SDK
 docker pull ghcr.io/itdevsamurai/atlassian-plugin-sdk-container:node16
 ```
 
-### What's included
-
-Base image and all tags will have the following:
-
-* Based on [eclipse-temurin:8-jdk](https://hub.docker.com/_/eclipse-temurin)
-    * Latest Ubuntu LTS
-    * Latest Eclipse Temurin 8 JDK (for Atlassian Plugin SDK)
-* [Atlassian Plugin SDK](https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-linux-or-mac-system/)
-* `gnupg` package
-
 ### Platforms
 
 Only `linux/amd64` due to Atlassian Plugin SDK.
@@ -29,8 +19,11 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
 ### Tags:
 
 * `latest`: this is a minimal image, only Temurin 8 JDK & Atlassian Plugin SDK
-* `node16`: minimal image with Node 16, Yarn installed.
-* `node14`: minimal image with Node 14, Yarn installed.
+    * Based on [eclipse-temurin:8-jdk](https://hub.docker.com/_/eclipse-temurin) (latest Ubuntu LTS)
+    * [Atlassian Plugin SDK](https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-linux-or-mac-system/)
+    * `gnupg` package
+* `node16`: what `latest` has, with Node 16 & Yarn installed.
+* `node14`: what `latest` has, with Node 14 & Yarn installed.
 
 ## Licensing
 

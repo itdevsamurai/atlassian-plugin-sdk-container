@@ -13,7 +13,7 @@ RUN apt-get update \
     && echo "deb [signed-by=/usr/share/keyrings/atlas.gpg] https://packages.atlassian.com/debian/atlassian-sdk-deb/ stable contrib" >>/etc/apt/sources.list \
     && wget -O- -q https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get update \
-    && apt-get install atlassian-plugin-sdk nodejs \
+    && apt-get install --no-install-recommends -y atlassian-plugin-sdk nodejs \
     && npm install -g yarn \
     && apt-get remove --purge -y wget \
     && apt-get clean \
