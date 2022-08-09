@@ -19,6 +19,10 @@ jobs:
             tags: latest
             platforms: linux/amd64
 
+          - path: node/12
+            tags: node12
+            platforms: linux/amd64
+
           - path: node/14
             tags: node14
             platforms: linux/amd64

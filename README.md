@@ -24,6 +24,7 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
     * `gnupg` package
 * `node16`: what `latest` has, with Node 16 & Yarn installed.
 * `node14`: what `latest` has, with Node 14 & Yarn installed.
+* `node12`: what `latest` has, with Node 12 & Yarn installed.
 
 ## Licensing
 

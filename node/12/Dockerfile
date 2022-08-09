@@ -11,7 +11,7 @@ RUN apt-get update \
     && wget -O- -q https://packages.atlassian.com/api/gpg/key/public \
     | gpg --dearmor | tee /usr/share/keyrings/atlas.gpg > /dev/null \
     && echo "deb [signed-by=/usr/share/keyrings/atlas.gpg] https://packages.atlassian.com/debian/atlassian-sdk-deb/ stable contrib" >>/etc/apt/sources.list \
-    && wget -O- -q https://deb.nodesource.com/setup_14.x | bash - \
+    && wget -O- -q https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get update \
     && apt-get install --no-install-recommends -y atlassian-plugin-sdk nodejs \
     && npm install -g yarn \
