@@ -15,7 +15,6 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install --no-install-recommends -y atlassian-plugin-sdk nodejs \
     && npm install -g yarn \
-    && apt-get remove --purge -y wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

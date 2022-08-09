@@ -22,6 +22,7 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
     * Based on [eclipse-temurin:8-jdk](https://hub.docker.com/_/eclipse-temurin) (latest Ubuntu LTS)
     * [Atlassian Plugin SDK](https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-linux-or-mac-system/)
     * `gnupg`
+    * `wget`
     * `make`: for building scripts
 * `node16`: what `latest` has, with Node 16 & Yarn installed.
 * `node14`: what `latest` has, with Node 14 & Yarn installed.
