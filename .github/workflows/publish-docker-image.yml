@@ -35,6 +35,10 @@ jobs:
             tags: node18
             platforms: linux/amd64
 
+          - path: node/20
+            tags: node20
+            platforms: linux/amd64
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
