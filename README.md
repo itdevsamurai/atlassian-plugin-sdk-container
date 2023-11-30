@@ -25,6 +25,7 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
   * `gnupg`
   * `wget`
   * `make`: for building scripts
+* `node20`: what `latest` has, with Node 20 & Yarn installed.
 * `node18`: what `latest` has, with Node 18 & Yarn installed.
 * `node16`: what `latest` has, with Node 16 & Yarn installed.
 * `node14`: what `latest` has, with Node 14 & Yarn installed.
