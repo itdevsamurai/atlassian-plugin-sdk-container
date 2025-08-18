@@ -1,7 +1,7 @@
 FROM eclipse-temurin:8-jdk
 
 ARG REFRESHED_AT
-ENV REFRESHED_AT $REFRESHED_AT
+ENV REFRESHED_AT=$REFRESHED_AT
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
