@@ -9,8 +9,8 @@ Container image for Atlassian Plugin SDK
 ### Quick start
 
 ```shell
-# Atlassian Plugin SDK with Node 16 & Yarn installed
-docker pull ghcr.io/itdevsamurai/atlassian-plugin-sdk-container:node16
+# Atlassian Plugin SDK with Node 24 & Yarn installed
+docker pull ghcr.io/itdevsamurai/atlassian-plugin-sdk-container:node24
 ```
 
 ### Platforms
@@ -25,10 +25,10 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
   * `gnupg`
   * `wget`
   * `make`: for building scripts
+* `node24`: what `latest` has, with Node 24 & Yarn installed.
 * `node22`: what `latest` has, with Node 22 & Yarn installed.
 * `node20`: what `latest` has, with Node 20 & Yarn installed.
 * `node18`: what `latest` has, with Node 18 & Yarn installed.
-* `node16`: what `latest` has, with Node 16 & Yarn installed.
 
 ## Licensing
 
