@@ -19,10 +19,6 @@ jobs:
             tags: latest
             platforms: linux/amd64
 
-          - path: node/16
-            tags: node16
-            platforms: linux/amd64
-
           - path: node/18
             tags: node18
             platforms: linux/amd64
@@ -35,6 +31,9 @@ jobs:
             tags: node22
             platforms: linux/amd64
 
+          - path: node/24
+            tags: node24
+            platforms: linux/amd64
     steps:
       - name: Checkout
         uses: actions/checkout@v5
