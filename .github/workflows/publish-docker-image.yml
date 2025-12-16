@@ -21,10 +21,6 @@ jobs:
             tags: latest
             platforms: linux/amd64
 
-          - path: node/18
-            tags: node18
-            platforms: linux/amd64
-
           - path: node/20
             tags: node20
             platforms: linux/amd64
