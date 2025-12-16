@@ -27,10 +27,13 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
 
 **JDK 8**
 - `latest`, `node22`, `jdk8-node22`
+- `node18`, `jdk8-node18`
 - `node20`, `jdk8-node20`
 - `node24`, `jdk8-node24`
 
 **JDK 21**
+- `jdk21-node18`
+- `jdk21-node20`
 - `jdk21-node22`
 - `jdk21-node24`
 
