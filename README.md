@@ -12,6 +12,11 @@ Container image for Atlassian Plugin SDK
 # Atlassian Plugin SDK with Node 24 & Yarn installed
 docker pull ghcr.io/itdevsamurai/atlassian-plugin-sdk-container:node24
 ```
+What's in the image:
+
+* [Atlassian Plugin SDK](https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-linux-or-mac-system/)
+* Eclipse Temurin (version depends on tag, see below)
+* NodeJS with Yarn (version depends on tag, see below)
 
 ### Platforms
 
@@ -19,16 +24,15 @@ Only `linux/amd64` due to Atlassian Plugin SDK.
 
 ### Tags
 
-* `latest`: this is a minimal image, only Temurin 8 JDK & Atlassian Plugin SDK
-  * Based on [eclipse-temurin:8-jdk](https://hub.docker.com/_/eclipse-temurin) (latest Ubuntu LTS)
-  * [Atlassian Plugin SDK](https://developer.atlassian.com/server/framework/atlassian-sdk/install-the-atlassian-sdk-on-a-linux-or-mac-system/)
-  * `gnupg`
-  * `wget`
-  * `make`: for building scripts
-* `node24`: what `latest` has, with Node 24 & Yarn installed.
-* `node22`: what `latest` has, with Node 22 & Yarn installed.
-* `node20`: what `latest` has, with Node 20 & Yarn installed.
-* `node18`: what `latest` has, with Node 18 & Yarn installed.
+
+**JDK 8**
+- `latest`, `node22`, `jdk8-node22`
+- `node20`, `jdk8-node20`
+- `node24`, `jdk8-node24`
+
+**JDK 21**
+- `jdk21-node22`
+- `jdk21-node24`
 
 ## Licensing
 

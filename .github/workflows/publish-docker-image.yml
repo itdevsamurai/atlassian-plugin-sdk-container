@@ -16,25 +16,29 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        docker-file:
-          - path: .
-            tags: latest
-            platforms: linux/amd64
+        variant:
+          # jdk8 images (backward compatible tags)
+          - jdk: 8
+            node: 20
+            tags: node20,jdk8-node20
+          - jdk: 8
+            node: 22
+            tags: latest,node22,jdk8-node22
+          - jdk: 8
+            node: 24
+            tags: node24,jdk8-node24
 
-          - path: node/20
-            tags: node20
-            platforms: linux/amd64
+          # jdk21
+          - jdk: 21
+            node: 22
+            tags: jdk21-node22
 
-          - path: node/22
-            tags: node22
-            platforms: linux/amd64
-
-          - path: node/24
-            tags: node24
-            platforms: linux/amd64
+          - jdk: 21
+            node: 24
+            tags: jdk21-node24
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -58,23 +62,22 @@ jobs:
       - name: Prepare
         id: prepare
         run: |
-          DOCKER_IMAGE=ghcr.io/itdevsamurai/atlassian-plugin-sdk-container
-          TAGZ=$(echo ${{ matrix.docker-file.tags }} | tr "," "\n")
-          VERSION=${TAGZ[0]}
-          for tag in $TAGZ
-          do
-            TAGS="${TAGS},${DOCKER_IMAGE}:${tag}"
+          IMAGE=ghcr.io/itdevsamurai/atlassian-plugin-sdk-container
+          TAGS=""
+          for t in $(echo "${{ matrix.variant.tags }}" | tr "," " "); do
+            TAGS="$TAGS,$IMAGE:$t"
           done
-          echo "docker_image=${DOCKER_IMAGE}" >> $GITHUB_OUTPUT
-          echo "version=${VERSION}" >> $GITHUB_OUTPUT
-          echo "tags=${TAGS}" >> $GITHUB_OUTPUT
+          echo "tags=${TAGS#,}" >> $GITHUB_OUTPUT
 
-      - name: Build and push main image
+      - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: ./${{ matrix.docker-file.path }}
-          file: ./${{ matrix.docker-file.path }}/Dockerfile
-          build-args: REFRESHED_AT=$(date +%Y-%m-%d)
-          platforms: ${{ matrix.docker-file.platforms }}
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
           tags: ${{ steps.prepare.outputs.tags }}
+          build-args: |
+            JDK_BASE=eclipse-temurin:${{ matrix.variant.jdk }}-jdk
+            NODE_VERSION=${{ matrix.variant.node }}
+            REFRESHED_AT=$(date +%Y-%m-%d)
