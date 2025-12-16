@@ -19,6 +19,9 @@ jobs:
         variant:
           # jdk8 images (backward compatible tags)
           - jdk: 8
+            node: 18
+            tags: node18,jdk8-node18
+          - jdk: 8
             node: 20
             tags: node20,jdk8-node20
           - jdk: 8
@@ -29,6 +32,14 @@ jobs:
             tags: node24,jdk8-node24
 
           # jdk21
+          - jdk: 21
+            node: 18
+            tags: jdk21-node18
+
+          - jdk: 21
+            node: 20
+            tags: jdk21-node20
+
           - jdk: 21
             node: 22
             tags: jdk21-node22
